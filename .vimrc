@@ -30,6 +30,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'fatih/vim-go'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,11 +60,15 @@ set number
 let g:airline_powerline_fonts = 1
 let g:airline_theme='simple'
 filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-set ttimeoutlen=0
+" show existing tab with 2 spaces width
+set tabstop=2
 " when indenting with '>', use 4 spaces width
-set shiftwidth=4
+set shiftwidth=2
+set ttimeoutlen=0
 " On pressing tab, insert 4 spaces
 set expandtab
+set backspace=indent,eol,start
+
+" Go
+let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
 
